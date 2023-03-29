@@ -10,7 +10,7 @@
 
 The following environment variables are available:
 ```
-STATIONEERS_SERVER_STARTUP_ARGUMENTS (DEFAULT: "-autostart -nographics -batchmode" - Default startup arguments)
+STATIONEERS_SERVER_STARTUP_ARGUMENTS (DEFAULT: "-autostart -nographics -batchmode -settings StartLocalHost true" - Default startup arguments)
 STATIONEERS_SERVER_NAME (DEFAULT: "A Docker Server" - Publicly visible server name)
 STATIONEERS_WORLD_NAME  (DEFAULT: "docker" - World name, mainly used for save names etc.)
 STATIONEERS_WORLD_TYPE  (DEFAULT: "moon" - World type, mainly used for save names etc.)
