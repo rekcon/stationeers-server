@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-screen -S docker bash -c "bash /app/start.sh"
+#!/bin/sh
+screen -S docker sh -c "sh /app/start.sh"

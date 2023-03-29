@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Enable debugging
 #set -x
@@ -34,13 +34,13 @@ if [ ! -f "/stationeers/rocketstation_DedicatedServer.x86_64" ]; then
 	echo ""
 	echo "Installing Stationeers.."
 	echo ""
-	bash steamcmd +runscript /app/install.txt
+	steamcmd +runscript /app/install.txt
 else
 	# Install Stationeers from install.txt
 	echo ""
 	echo "Updating Stationeers.."
 	echo ""
-	bash steamcmd +runscript /app/install.txt
+	steamcmd +runscript /app/install.txt
 fi
 
 # Remove extra whitespace from startup command
@@ -77,7 +77,7 @@ if [ ! -z ${STATIONEERS_SERVER_PASSWORD+x} ]; then
 fi
 
 # Set the working directory
-cd /stationeers || exit
+cd /stationeers
 
 # Run the server
 echo ""
@@ -86,15 +86,6 @@ echo ""
 ./rocketstation_DedicatedServer.x86_64 \
   ${STATIONEERS_STARTUP_COMMAND} \
   2>&1 &
-# ./rocketstation_DedicatedServer.x86_64 \
-# 	${STATIONEERS_SERVER_STARTUP_ARGUMENTS} \
-# 	-gameport=${STATIONEERS_GAME_PORT} \
-# 	-updateport=${STATIONEERS_QUERY_PORT} \
-# 	-worldname=${STATIONEERS_WORLD_NAME} \
-# 	-loadworld=${STATIONEERS_WORLD_NAME} \
-# 	-autosaveinterval=${STATIONEERS_SERVER_SAVE_INTERVAL} \
-# 	-servername "${STATIONEERS_SERVER_NAME}" \
-# 	2>&1 &
 
 child=$!
 wait "$child"
