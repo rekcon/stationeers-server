@@ -28,7 +28,7 @@ ADD create_screen.sh /app/create_screen.sh
 WORKDIR /
 
 # Setup default environment variables for the server
-ENV STATIONEERS_SERVER_STARTUP_ARGUMENTS "-autostart -nographics -batchmode -settings StartLocalHost true"
+ENV STATIONEERS_SERVER_STARTUP_ARGUMENTS "-autostart -nographics -batchmode"
 ENV STATIONEERS_SERVER_NAME "A Docker Server"
 ENV STATIONEERS_WORLD_NAME "docker"
 ENV STATIONEERS_WORLD_TYPE "moon"

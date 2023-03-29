@@ -1,16 +1,16 @@
 # Stationeers server that runs inside a Docker container
 
-**NOTE**: This image will install/update on startup. The path ```/steamcmd/stationeers``` can be mounted on the host for data persistence.
+**NOTE**: This image will install/update on startup. The path ```/stationeers``` can be mounted on the host for data persistence.
 
 ## How to run the server
 
 1. Set the environment variables you wish to modify from below
-2. Optionally mount ```/steamcmd/stationeers``` somewhere on the host or inside another container to keep your data safe
+2. Optionally mount ```/stationeers``` somewhere on the host or inside another container to keep your data safe
 3. Enjoy!
 
 The following environment variables are available:
 ```
-STATIONEERS_SERVER_STARTUP_ARGUMENTS (DEFAULT: "-autostart -nographics -batchmode -settings StartLocalHost true" - Default startup arguments)
+STATIONEERS_SERVER_STARTUP_ARGUMENTS (DEFAULT: "-autostart -nographics -batchmode" - Default startup arguments)
 STATIONEERS_SERVER_NAME (DEFAULT: "A Docker Server" - Publicly visible server name)
 STATIONEERS_WORLD_NAME  (DEFAULT: "docker" - World name, mainly used for save names etc.)
 STATIONEERS_WORLD_TYPE  (DEFAULT: "moon" - World type, mainly used for save names etc.)
