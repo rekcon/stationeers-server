@@ -9,24 +9,6 @@ set -e
 # Print the user we're currently running as
 echo "Running as user: $(whoami)"
 
-# Define the exit handler
-exit_handler()
-{
-	echo ""
-	echo "Waiting for server to shutdown.."
-	echo ""
-	kill -SIGINT "$child"
-	sleep 5
-
-	echo ""
-	echo "Terminating.."
-	echo ""
-	exit
-}
-
-# Trap specific signals and forward to the exit handler
-trap 'exit_handler' HUP INT QUIT TERM
-
 # Check that Stationeers exists in the first place
 if [ ! -f "/stationeers/rocketstation_DedicatedServer.x86_64" ]; then
 	# Install Stationeers from install.txt
@@ -83,8 +65,4 @@ echo ""
 echo "Starting Stationeers with arguments: ${STATIONEERS_STARTUP_COMMAND}"
 echo ""
 ./rocketstation_DedicatedServer.x86_64 \
-  ${STATIONEERS_STARTUP_COMMAND} \
-  2>&1 &
-
-child=$!
-wait "$child"
+  ${STATIONEERS_STARTUP_COMMAND}
