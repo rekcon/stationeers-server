@@ -22,7 +22,7 @@ ADD install.txt /app/install.txt
 
 # Copy the startup script
 ADD start_stationeers.sh /app/start.sh
-ADD create-screen.sh /app/create-screen.sh
+ADD create_screen.sh /app/create_screen.sh
 
 # Set the current working directory
 WORKDIR /
@@ -53,4 +53,4 @@ ENV CHOWN_DIRS "/app,/steamcmd"
 # VOLUME ["/stationeers"]
 
 # Start the server
-CMD ["/app/create-screen.sh"]
+CMD ["/app/create_screen.sh"]
