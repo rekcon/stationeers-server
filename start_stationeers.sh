@@ -26,7 +26,6 @@ fi
 
 # Remove extra whitespace from startup command
 STATIONEERS_STARTUP_COMMAND=$(echo "$STATIONEERS_SERVER_STARTUP_ARGUMENTS" | tr -s " ")
-fi
 
 # Set the world name
 if [ ! -z ${STATIONEERS_WORLD_NAME+x} ]; then
