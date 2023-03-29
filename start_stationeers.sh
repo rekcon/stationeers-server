@@ -28,25 +28,19 @@ exit_handler()
 # Trap specific signals and forward to the exit handler
 trap 'exit_handler' SIGHUP SIGINT SIGQUIT SIGTERM
 
-# Install/update steamcmd
-echo ""
-echo "Installing/updating steamcmd.."
-echo ""
-curl -s http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -v -C /steamcmd -zx
-
 # Check that Stationeers exists in the first place
-if [ ! -f "/steamcmd/stationeers/rocketstation_DedicatedServer.x86_64" ]; then
+if [ ! -f "/stationeers/rocketstation_DedicatedServer.x86_64" ]; then
 	# Install Stationeers from install.txt
 	echo ""
 	echo "Installing Stationeers.."
 	echo ""
-	bash /steamcmd/steamcmd.sh +runscript /app/install.txt
+	bash steamcmd +runscript /app/install.txt
 else
 	# Install Stationeers from install.txt
 	echo ""
 	echo "Updating Stationeers.."
 	echo ""
-	bash /steamcmd/steamcmd.sh +runscript /app/install.txt
+	bash steamcmd +runscript /app/install.txt
 fi
 
 # Remove extra whitespace from startup command
@@ -83,13 +77,12 @@ if [ ! -z ${STATIONEERS_SERVER_PASSWORD+x} ]; then
 fi
 
 # Set the working directory
-cd /steamcmd/stationeers || exit
+cd /stationeers || exit
 
 # Run the server
 echo ""
 echo "Starting Stationeers with arguments: ${STATIONEERS_STARTUP_COMMAND}"
 echo ""
-screen -S stationeers bash -c \
 ./rocketstation_DedicatedServer.x86_64 \
   ${STATIONEERS_STARTUP_COMMAND} \
   2>&1 &

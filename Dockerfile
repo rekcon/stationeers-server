@@ -1,5 +1,5 @@
 
-FROM didstopia/base:nodejs-12-steamcmd-ubuntu-18.04
+FROM steamcmd/steamcmd:ubuntu-22
 
 LABEL maintainer="rekcon <rekconcubix@gmail.com>"
 
@@ -15,13 +15,14 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 # Create and set the steamcmd folder as a volume
-RUN mkdir -p /steamcmd/stationeers
+RUN mkdir -p /stationeers
 
 # Add the steamcmd installation script
 ADD install.txt /app/install.txt
 
 # Copy the startup script
 ADD start_stationeers.sh /app/start.sh
+ADD create-screen.sh /app/create-screen.sh
 
 # Set the current working directory
 WORKDIR /
@@ -49,7 +50,7 @@ EXPOSE 27015/udp
 ENV CHOWN_DIRS "/app,/steamcmd"
 
 # Expose the volumes
-# VOLUME ["/steamcmd/stationeers"]
+# VOLUME ["/stationeers"]
 
 # Start the server
-CMD [ "bash", "/app/start.sh"]
+CMD ["/app/create-screen.sh"]
