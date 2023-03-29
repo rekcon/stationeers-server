@@ -8,8 +8,6 @@
 2. Optionally mount ```/steamcmd/stationeers``` somewhere on the host or inside another container to keep your data safe
 3. Enjoy!
 
-*You might alternatively edit `default.ini` to further customize your installation, but this hasn't been fully tested. Using environment variables is the only recommended way at the moment.*
-
 The following environment variables are available:
 ```
 STATIONEERS_SERVER_STARTUP_ARGUMENTS (DEFAULT: "-autostart -nographics -batchmode" - Default startup arguments)
