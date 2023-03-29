@@ -24,12 +24,6 @@ STATIONEERS_QUERY_PORT (DEFAULT: "27015" - Steam query port (UDP))
 STATIONEERS_SERVER_PASSWORD (DEFAULT: "" - Server password)
 ```
 
-## Administering the server
-
-Stationeers comes with a built-in web-interface for RCON, which can be accessed at http://your-server-ip:27500.
-
-You should definitely set/change the RCON password for this (default password is `stationeers`, which is found in `default.ini`).
-
 ## Anything else
 
 Thanks to Didstopia for the basis for this docker
