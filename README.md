@@ -18,7 +18,11 @@ STATIONEERS_SERVER_SAVE_INTERVAL (DEFAULT: "300" - Automatic save interval in se
 STATIONEERS_GAME_PORT (DEFAULT: "27500" - Used for both incoming client connections (UDP) and the web-interface (TCP))
 STATIONEERS_QUERY_PORT (DEFAULT: "27015" - Steam query port (UDP))
 STATIONEERS_SERVER_PASSWORD (DEFAULT: "" - Server password)
+STATIONEERS_SERVER_SECRET (DEFAULT: "" - Server secret)
+STATIONEERS_SETTINGS_PATH (DEFAULT: "" - Settings path)
 ```
+
+NOTE: If STATIONEERS_SETTINGS_PATH is present, all over settings will be overwritten by it.
 
 ## Anything else
 
