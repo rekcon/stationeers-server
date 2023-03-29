@@ -1,7 +1,7 @@
 
 FROM didstopia/base:nodejs-12-steamcmd-ubuntu-18.04
 
-LABEL maintainer="Didstopia <support@didstopia.com>"
+LABEL maintainer="rekcon <rekconcubix@gmail.com>"
 
 # Fixes apt-get warnings
 ARG DEBIAN_FRONTEND=noninteractive
@@ -10,7 +10,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         libsdl2-2.0-0:i386 \
-        net-tools && \
+        net-tools \
+        screen && \
 	rm -rf /var/lib/apt/lists/*
 
 # Create and set the steamcmd folder as a volume
@@ -29,8 +30,9 @@ WORKDIR /
 ENV STATIONEERS_SERVER_STARTUP_ARGUMENTS "-autostart -nographics -batchmode"
 ENV STATIONEERS_SERVER_NAME "A Docker Server"
 ENV STATIONEERS_WORLD_NAME "docker"
+ENV STATIONEERS_WORLD_TYPE "moon"
 ENV STATIONEERS_SERVER_SAVE_INTERVAL "300"
-ENV STATIONEERS_GAME_PORT "27500"
+ENV STATIONEERS_GAME_PORT "27016"
 ENV STATIONEERS_QUERY_PORT "27015"
 ENV STATIONEERS_SERVER_PASSWORD ""
 
@@ -39,8 +41,8 @@ ENV PGID 1000
 ENV PUID 1000
 
 # Expose necessary ports
-EXPOSE 27500/tcp
-EXPOSE 27500/udp
+EXPOSE 27016/tcp
+EXPOSE 27016/udp
 EXPOSE 27015/udp
 
 # Define directories to take ownership of

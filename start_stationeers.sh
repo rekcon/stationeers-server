@@ -64,7 +64,7 @@ fi
 
 # Set the world name
 if [ ! -z ${STATIONEERS_WORLD_NAME+x} ]; then
-	STATIONEERS_STARTUP_COMMAND="${STATIONEERS_STARTUP_COMMAND} -worldname=${STATIONEERS_WORLD_NAME} -loadworld=${STATIONEERS_WORLD_NAME}"
+	STATIONEERS_STARTUP_COMMAND="${STATIONEERS_STARTUP_COMMAND} -worldname=${STATIONEERS_WORLD_NAME} -loadworld=${STATIONEERS_WORLD_NAME} ${STATIONEERS_WORLD_TYPE}"
 fi
 
 # Set the auto-save interval
@@ -89,6 +89,7 @@ cd /steamcmd/stationeers || exit
 echo ""
 echo "Starting Stationeers with arguments: ${STATIONEERS_STARTUP_COMMAND}"
 echo ""
+screen -S stationeers \
 ./rocketstation_DedicatedServer.x86_64 \
   ${STATIONEERS_STARTUP_COMMAND} \
   2>&1 &
