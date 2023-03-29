@@ -25,7 +25,7 @@ exit_handler()
 }
 
 # Trap specific signals and forward to the exit handler
-trap 'exit_handler' SIGHUP SIGINT SIGQUIT SIGTERM
+trap 'exit_handler' SIGINT SIGQUIT SIGTERM
 
 # Check that Stationeers exists in the first place
 if [ ! -f "/stationeers/rocketstation_DedicatedServer.x86_64" ]; then
