@@ -53,4 +53,5 @@ ENV CHOWN_DIRS "/app,/steamcmd"
 # VOLUME ["/stationeers"]
 
 # Start the server
-CMD ["sh", "/app/create_screen.sh"]
+ENTRYPOINT ["sh"]
+CMD ["/app/create_screen.sh"]
