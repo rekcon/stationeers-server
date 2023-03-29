@@ -89,7 +89,7 @@ cd /steamcmd/stationeers || exit
 echo ""
 echo "Starting Stationeers with arguments: ${STATIONEERS_STARTUP_COMMAND}"
 echo ""
-screen -S stationeers \
+screen -S stationeers bash -c \
 ./rocketstation_DedicatedServer.x86_64 \
   ${STATIONEERS_STARTUP_COMMAND} \
   2>&1 &
