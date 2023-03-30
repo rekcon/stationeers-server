@@ -11,8 +11,15 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         libsdl2-2.0-0:i386 \
         net-tools \
+        locales \
         screen && \
 	rm -rf /var/lib/apt/lists/*
+
+# Enable UTF-8
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+ENV LANG en_US.UTF-8
 
 # Create and set the steamcmd folder as a volume
 RUN mkdir -p /stationeers
