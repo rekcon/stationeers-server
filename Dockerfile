@@ -56,4 +56,4 @@ ENV CHOWN_DIRS "/app,/steamcmd"
 
 # Start the server
 ENTRYPOINT ["bash"]
-CMD ["-c", "/app/create_screen.sh"]
+CMD ["/app/create_screen.sh"]
