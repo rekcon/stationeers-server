@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env /bin/bash
 
 # Enable debugging
 #set -x
