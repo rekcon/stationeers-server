@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 touch /var/run/utmp
-screen -S docker sh -c "sh /app/start.sh"
+screen -S docker bash -c "bash -c /app/start.sh"
